@@ -1,19 +1,33 @@
-const averageScore = function (score1, score2, score3) {
-    return (score1 + score2 + score3) / 3;
+const jonasArray = [
+    'Jonas',
+    'Dude',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+const jonas = {
+    firstName: "Jonas",
+    lastName: "Dude",
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 };
 
-const dolphinScore = averageScore(44, 23, 71);
-const koalaScore = averageScore(65, 54, 49);
+console.log(jonas.lastName);
 
-const verifyVictor = function (firstTeamScore, secondTeamScore) {
-    if (firstTeamScore >= secondTeamScore * 2) {
-        console.log(`${firstTeamScore} vs. ${secondTeamScore}: Dolphins win!`);
-    } else if (secondTeamScore >= firstTeamScore * 2) {
-        console.log(`${secondTeamScore} vs. ${firstTeamScore}: Koalas win!`);
-    } else {
-        console.log(`It's a tie...`);
-    }
-};
- 
-const winner = verifyVictor(dolphinScore, koalaScore);
-winner;
+let value = 'lastName';
+console.log(jonas[value]);
+
+const nameKey = "Name";
+
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends.');
+
+if (jonas[interestedIn]) {
+    console.log(jonas[interestedIn]);
+} else {
+    console.log('Value is not found. Choose between firstName, lastName, age, job, and friends.');
+}
