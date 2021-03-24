@@ -39,19 +39,66 @@
 // averageTotal = Number(averageTotal);
 // console.log(averageTotal);
 
-const temperatures = [100, -3, -6, 34, "error", 16, -10, -20, 30, 234];
+/*
+THIS IS WHERE THE VIDEO CODE IS BELOW
+*/
 
-const maxNumber = function (array) {
-  let largestNumber = array[0];
-  let i = 0;
-  for (i; i < array.length; i++) {
-    if (!Number(array[i])) {
-      continue;
-    } else if (array[i] > largestNumber) {
-      largestNumber = array[i];
-    }
+// const temperatures = [100, -3, -6, 34, "error", 16, -10, -20, 30, 234];
+
+// const maxNumber = function (array) {
+//   let largestNumber = array[0];
+//   let i = 0;
+//   for (i; i < array.length; i++) {
+//     if (!Number(array[i])) {
+//       continue;
+//     } else if (array[i] > largestNumber) {
+//       largestNumber = array[i];
+//     }
+//   }
+//   return largestNumber;
+// };
+
+// console.log(maxNumber(temperatures));
+
+/*
+Code wars
+*/
+
+// const item = 9119;
+// const fix = item.toString().split("");
+// let squared;
+// console.log(fix);
+
+// for (let i = 0; i < fix.length; i++) {
+//   squared = fix[i] ** 2;
+//   console.log(squared);
+// }
+
+// Goals
+// User inputs INTEGER and returns the squared variation as well as it concattenated
+// Examples: 3113 => 9119
+
+// function squareConcat(items) {
+//   let formatted = items.toString().split("");
+//   let newFormat = [];
+//   for (let i = 0; i < formatted.length; i++) {
+//     newFormat.push(formatted[i] ** 2);
+//   }
+//   return newFormat.join("");
+// }
+
+console.log(squareDigits(9119));
+
+function squareDigits(num) {
+  //may the code be with you
+  let newNum = num.toString().split("");
+  let joinArray = [];
+  for (let i = 0; i < newNum.length; i++) {
+    joinArray.push(newNum[i] ** 2);
   }
-  return largestNumber;
-};
+  return +joinArray.join("");
+}
 
-console.log(maxNumber(temperatures));
+// function squareConcat(items) {
+
+// }
