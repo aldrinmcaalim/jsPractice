@@ -3,31 +3,18 @@ const tips = [];
 const totals = [];
 
 const calcTip = bill => {
-    let tip;
-    let total;
-    for (let i = 0; i < bill.length; i++) {
-        if (bill[i] >= 50 && bill[i] <= 300) {
-            tip = bill[i] * .15;
-            tip = Number(tip.toFixed(2));
-            tips.push(tip);
-            total = bill[i] + tip;
-            total = Number(total.toFixed(2));
-            totals.push(total);
-        } else {
-            tip = bill[i] * .15;
-            tip = Number(tip.toFixed(2));
-            tips.push(tip);
-            total = bill[i] + tip;
-            total = Number(total.toFixed(2));
-            totals.push(total);
-        }
-    }
+    return bill >= 50 && bill <= 300 ? bill * .15 : bill * .2;
 }
 
-console.log(calcTip(bills));
+for (let i = 0; i < bills.length; i++) {
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip + bills[i]);
+}
 
-console.log(tips);
-console.log(totals);
+// console.log(calcTip(bills));
+
+console.log(bills, tips, totals);
 
 // const numbers = [100, 100, 100, 100];
 
@@ -39,12 +26,14 @@ const calcAverage = array => {
     return total / array.length;
 }
 
-let averageBills = calcAverage(bills).toFixed(2);
-averageBills = Number(averageBills);
-console.log(averageBills);
-let averageTips = calcAverage(tips).toFixed(2);
-averageTips = Number(averageTips);
-console.log(averageTips);
-let averageTotal = calcAverage(totals).toFixed(2);
-averageTotal = Number(averageTotal);
-console.log(averageTotal);
+console.log(calcAverage(bills), calcAverage(tips), calcAverage(totals));
+
+// let averageBills = calcAverage(bills).toFixed(2);
+// averageBills = Number(averageBills);
+// console.log(averageBills);
+// let averageTips = calcAverage(tips).toFixed(2);
+// averageTips = Number(averageTips);
+// console.log(averageTips);
+// let averageTotal = calcAverage(totals).toFixed(2);
+// averageTotal = Number(averageTotal);
+// console.log(averageTotal);
