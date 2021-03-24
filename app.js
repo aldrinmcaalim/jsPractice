@@ -1,28 +1,30 @@
-const jonas = [
-    'Jonas',
-    'Dude',
-    2037 - 1991,
-    'teacher',
-    ['Michael', 'Peter', 'Steven'],
-    true
-];
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
 
-// console.log(`For Loop:`);
-// for (let rep = 1; rep < 11; rep++) {
-//     console.log(`Rep ${rep}`);
-// }
-
-// console.log(`While Loop:`);
-// let rep = 1;
-// while (rep < 11) {
-//     console.log(`Rep ${rep}`);
-//     rep++;
-// }
-
-let die = Math.floor(Math.random() * 6) + 1;
-// console.log(die);
-while (die !== 6) {
-    console.log(`You rolled a ${die}!`);
-    die = Math.floor(Math.random() * 6) + 1;
-    if (die === 6) console.log("The loop has ended");
+const calcTip = bill => {
+    let tip;
+    let total;
+    for (let i = 0; i < bill.length; i++) {
+        if (bill[i] >= 50 && bill[i] <= 300) {
+            tip = bill[i] * .15;
+            tip = Number(tip.toFixed(2));
+            tips.push(tip);
+            total = bill[i] + tip;
+            total = Number(total.toFixed(2));
+            totals.push(total);
+        } else {
+            tip = bill[i] * .15;
+            tip = Number(tip.toFixed(2));
+            tips.push(tip);
+            total = bill[i] + tip;
+            total = Number(total.toFixed(2));
+            totals.push(total);
+        }
+    }
 }
+
+console.log(calcTip(bills));
+
+console.log(tips);
+console.log(totals);
